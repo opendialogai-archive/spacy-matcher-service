@@ -1,12 +1,12 @@
 FROM python:3.7.4
 
-MAINTAINER Your Name "ronalda@greenshootlabs.com"
+MAINTAINER Ronald Ashri "ronalda@greenshootlabs.com"
 
 # We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
+COPY ./requirements.txt /spacy-app/requirements.txt
 
-WORKDIR /app
+COPY ./app.py /spacy-app/app.py
+
+WORKDIR /spacy-app
 
 RUN pip install -r requirements.txt
-
-COPY . /app
