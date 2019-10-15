@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  spacyapi:
+    image: spacy-matcher-service:latest
+    ports:
+      - 8082:8080
+    command: python app.py
